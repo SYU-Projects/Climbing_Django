@@ -70,7 +70,7 @@ class Record2Form(forms.ModelForm):
             'course': forms.TextInput(
                 attrs={'class': 'form-input1', 'placeholder': '코스 이름'}
             ),
-            'time': forms.HiddenInput(
+            'time': forms.TextInput(
                 attrs={'class': 'form-input1', 'placeholder': '00:00:00'}
             )
         }

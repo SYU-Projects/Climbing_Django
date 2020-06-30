@@ -39,9 +39,11 @@
 {#                        {% for f in form2 %}#}
 {#                            {{ f }}#}
 {#                        {% endfor %}#}
-                            {{ form2 }}
+                            {{ form2.m_name }}
+                            {{ form2.course }}
                         <div id="start" class="post-btn1">Start</div>
                         <div id="modal-cancel-btn" class="post-btn2">cancel</div>
+                    <input id="finish_date" type="hidden" name="finish_date"/>
 {#                </form>#}
         </div>
             <!-- toggler comeout from bottom -->
@@ -58,6 +60,7 @@
                     <div class="bottom-stop buttons1" id="stop1" style="font-size: 90px;"> <i class="fa fa-stop-circle"></i>
                     </div>
                     <p id="fulltime"> </p>
+                    {{ form2.time }}
                     <button type="submit">저장</button>
                 </section>
             </div>
@@ -148,6 +151,9 @@
             if (minutes === 60) { minutes = 0; hours = hours + 1; } gethours = (hours < 10) ? ('0' + hours + ': ') : (hours + ': '); secs = (seconds < 10) ? ('0' + seconds) : (seconds);
             var x = document.getElementById("timer"); x.innerHTML = gethours + mins + secs;
             seconds++;
+
+            document.getElementById("finish_date").innerText = gethours + mins + secs;
+
             clearTime = setTimeout("startWatch( )", 1000);
         }
         function reset() {

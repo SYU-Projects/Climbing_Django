@@ -179,7 +179,6 @@ def record(request):
 #         time =
 
 
-
 def get_score(m_name, time):
     try:
         avg_time = int(Mountains.objects.get(name=m_name).avg_time)
